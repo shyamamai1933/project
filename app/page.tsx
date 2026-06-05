@@ -98,7 +98,7 @@ export default function Home() {
                 ॐ
               </div>
               <div className="hidden sm:block">
-                <h1 className="text-lg font-bold text-amber-950 tracking-wide">माँ शयामा मई</h1>
+                <h1 className="text-lg font-bold text-amber-950 tracking-wide">माँ श्यामा माई</h1>
                 <p className="text-xs text-amber-700 font-medium">दरभंगा, बिहार</p>
               </div>
             </div>
@@ -187,7 +187,7 @@ export default function Home() {
             <div className="text-6xl md:text-8xl drop-shadow-2xl">ॐ</div>
           </div>
           <h2 className="text-4xl md:text-7xl font-black mb-4 drop-shadow-2xl leading-tight tracking-wide">
-            जय माँ शयामा मई
+            जय माँ श्यामा माई
           </h2>
           <p className="text-base md:text-2xl mb-8 drop-shadow-lg max-w-2xl font-medium">
             आस्था, भक्ति और विश्वास का प्रतीक
@@ -282,7 +282,7 @@ export default function Home() {
                 <span className="text-amber-900 font-bold text-sm">मंदिर परिचय</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
-                माँ शयामा मई मंदिर
+                माँ श्यामा माई मंदिर
               </h2>
               <p className="text-gray-700 mb-4 leading-relaxed text-lg">
                 यह मंदिर समाज की आस्था, भक्ति और विश्वास का प्रतीक है। माँ शयामा का आशीर्वाद सभी भक्तों के जीवन में सुख, शांति और समृद्धि लाता है।
@@ -436,7 +436,7 @@ export default function Home() {
                   <div>
                     <h4 className="font-bold text-lg mb-1">पता</h4>
                     <p className="text-amber-100 leading-relaxed">
-                      माँ शयामा मई मंदिर<br />
+                      माँ श्यामा माई मंदिर<br />
                       दरभंगा, बिहार 846004
                     </p>
                   </div>
@@ -541,7 +541,7 @@ export default function Home() {
             </div>
             <div>
               <h3 className="font-black text-lg mb-4">मंदिर की जानकारी</h3>
-              <p className="text-sm font-medium mb-2">माँ शयामा मई मंदिर</p>
+              <p className="text-sm font-medium mb-2">माँ श्यामा माई मंदिर</p>
               <p className="text-sm font-medium mb-4">दरभंगा, बिहार 846004</p>
               <p className="text-xs text-amber-300">सभी भक्तों के लिए खुला</p>
             </div>
@@ -549,7 +549,7 @@ export default function Home() {
 
           <div className="border-t border-amber-700 pt-8">
             <p className="text-center text-sm font-medium">
-              © 2024 माँ शयामा मई मंदिर, दरभंगा। सर्वाधिकार सुरक्षित।
+              © 2024 माँ श्यामा माई मंदिर, दरभंगा। सर्वाधिकार सुरक्षित।
             </p>
             <p className="text-center text-xs text-amber-200 mt-2">
               भक्ति • समर्पण • शांति

@@ -52,7 +52,7 @@ export default function NiyuktiPage() {
               ॐ
             </div>
             <div>
-              <p className="text-sm font-bold text-amber-950 leading-none">माँ शयामा मई मंदिर</p>
+              <p className="text-sm font-bold text-amber-950 leading-none">माँ श्यामा माई मंदिर</p>
               <p className="text-xs text-amber-700">दरभंगा, बिहार</p>
             </div>
           </div>
@@ -277,7 +277,7 @@ export default function NiyuktiPage() {
 
       {/* Footer */}
       <footer className="bg-amber-950 text-amber-300 py-6 px-4 text-center text-sm font-medium">
-        © 2024 माँ शयामा मई मंदिर, दरभंगा। सर्वाधिकार सुरक्षित।
+        © 2024 माँ श्यामा माई मंदिर, दरभंगा। सर्वाधिकार सुरक्षित।
       </footer>
     </div>
   );

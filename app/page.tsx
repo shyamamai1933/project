@@ -187,7 +187,7 @@ export default function Home() {
             <div className="text-6xl md:text-8xl drop-shadow-2xl">ॐ</div>
           </div>
           <h2 className="text-4xl md:text-7xl font-black mb-4 drop-shadow-2xl leading-tight tracking-wide">
-            जय माँ श्यामा माई
+            जय श्यामा माई
           </h2>
           <p className="text-base md:text-2xl mb-8 drop-shadow-lg max-w-2xl font-medium">
             आस्था, भक्ति और विश्वास का प्रतीक
@@ -541,7 +541,7 @@ export default function Home() {
             </div>
             <div>
               <h3 className="font-black text-lg mb-4">मंदिर की जानकारी</h3>
-              <p className="text-sm font-medium mb-2">माँ श्यामा माई मंदिर</p>
+              <p className="text-sm font-medium mb-2">माँ शयामा मई मंदिर</p>
               <p className="text-sm font-medium mb-4">दरभंगा, बिहार 846004</p>
               <p className="text-xs text-amber-300">सभी भक्तों के लिए खुला</p>
             </div>

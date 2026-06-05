@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu, X, MapPin, Clock, Phone, Mail, Heart, ShoppingCart, Bell, ChevronRight } from 'lucide-react';
+import { Menu, X, MapPin, Clock, Phone, Mail, Heart, ShoppingCart, Bell, ChevronRight, Briefcase } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -116,8 +117,17 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Donate Button */}
-            <div className="hidden sm:flex gap-2">
+            {/* Header Buttons */}
+            <div className="hidden sm:flex gap-2 items-center">
+              <Link
+                href="/niyukti"
+                className="px-4 py-2 bg-gradient-to-r from-red-600 to-red-700 text-white text-sm font-bold rounded-lg hover:shadow-lg transition-all duration-300 flex items-center gap-2 transform hover:scale-105 relative"
+              >
+                <Briefcase size={15} />
+                नियुक्ति
+                <span className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-yellow-400 rounded-full animate-ping"></span>
+                <span className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-yellow-400 rounded-full"></span>
+              </Link>
               <button className="px-5 py-2 bg-gradient-to-r from-amber-700 to-amber-800 text-white text-sm font-bold rounded-lg hover:shadow-lg transition-all duration-300 flex items-center gap-2 transform hover:scale-105">
                 <Heart size={16} className="fill-white" />
                 दान करें
@@ -146,7 +156,14 @@ export default function Home() {
                   {item.label}
                 </a>
               ))}
-              <button className="w-full mx-4 px-4 py-2 bg-gradient-to-r from-amber-700 to-amber-800 text-white text-sm font-bold rounded-lg hover:shadow-lg flex items-center justify-center gap-2">
+              <Link
+                href="/niyukti"
+                className="flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-red-600 to-red-700 text-white text-sm font-bold rounded-lg"
+              >
+                <Briefcase size={15} />
+                नियुक्ति
+              </Link>
+              <button className="w-full px-4 py-2 bg-gradient-to-r from-amber-700 to-amber-800 text-white text-sm font-bold rounded-lg hover:shadow-lg flex items-center justify-center gap-2">
                 <Heart size={16} className="fill-white" />
                 दान करें
               </button>

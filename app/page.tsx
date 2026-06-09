@@ -80,10 +80,10 @@ export default function Home() {
   ];
 
   const donationTiers = [
-    { amount: '₹ 101', label: 'अभिषेक पूजन' },
-    { amount: '₹ 251', label: 'विशेष पूजा' },
-    { amount: '₹ 501', label: 'हवन पूजन' },
-    { amount: '₹ 1100', label: 'श्राद्ध और तर्पण' },
+    { amount: '₹ 1101', label: 'अभिषेक पूजन' },
+    { amount: '₹ 1101', label: 'विशेष पूजा' },
+    { amount: '₹ 1101', label: 'हवन पूजन' },
+    { amount: '₹ 1101', label: 'श्राद्ध और तर्पण' },
   ];
 
   return (
@@ -251,7 +251,7 @@ export default function Home() {
             {[
               { icon: Clock, label: 'खुलने का समय', value: '5:00 AM - 10:00 PM' },
               { icon: MapPin, label: 'स्थान', value: 'दरभंगा, बिहार' },
-              { icon: Phone, label: 'फोन', value: '+91 XXXXX XXXXX' },
+              { icon: Phone, label: 'फोन', value: '+91 91919 19191' },
               { icon: Mail, label: 'ईमेल', value: 'info@maashyamamandir.in' },
             ].map((item, idx) => (
               <div

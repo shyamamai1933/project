@@ -436,7 +436,7 @@ export default function Home() {
                   <div>
                     <h4 className="font-bold text-lg mb-1">पता</h4>
                     <p className="text-amber-100 leading-relaxed">
-                      माँ श्यामा माई मंदिर<br />
+                      श्यामा माई मंदिर<br />
                       दरभंगा, बिहार 846004
                     </p>
                   </div>

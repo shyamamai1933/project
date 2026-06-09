@@ -189,6 +189,8 @@ export default function NiyuktiPage() {
                     <td className="px-5 py-4 text-center">
                       <a
                         href={v.applyLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-amber-700 to-amber-800 text-white text-xs font-bold rounded-lg hover:from-amber-800 hover:to-amber-900 transition-all duration-200 hover:shadow-md transform hover:scale-105"
                       >
                         आवेदन करें
@@ -227,6 +229,8 @@ export default function NiyuktiPage() {
                   </p>
                   <a
                     href={v.applyLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-amber-700 to-amber-800 text-white text-xs font-bold rounded-lg"
                   >
                     आवेदन करें

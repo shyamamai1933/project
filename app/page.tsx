@@ -448,13 +448,13 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-1">फोन</h4>
-                    <p className="text-amber-100">+91 XXXXX XXXXX</p>
+                    <p className="text-amber-100">+91 91919 19191</p>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
                   <div className="p-3 bg-amber-700 rounded-xl flex-shrink-0">
-                    <Mail size={24} />
+                    <Mail size={27} />
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-1">ईमेल</h4>

@@ -252,7 +252,7 @@ export default function Home() {
               { icon: Clock, label: 'खुलने का समय', value: '5:00 AM - 10:00 PM' },
               { icon: MapPin, label: 'स्थान', value: 'दरभंगा, बिहार' },
               { icon: Phone, label: 'फोन', value: '+91 XXXXX XXXXX' },
-              { icon: Mail, label: 'ईमेल', value: 'info@maashyama.in' },
+              { icon: Mail, label: 'ईमेल', value: 'info@maashyamamandir.in' },
             ].map((item, idx) => (
               <div
                 key={idx}
@@ -458,7 +458,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-1">ईमेल</h4>
-                    <p className="text-amber-100">info@maashyama.in</p>
+                    <p className="text-amber-100">info@maashyamamandir.in</p>
                   </div>
                 </div>
               </div>

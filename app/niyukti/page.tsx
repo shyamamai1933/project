@@ -146,6 +146,32 @@ export default function NiyuktiPage() {
               <span className="text-red-600 font-black text-lg leading-none">!</span>
             </div>
             <div>
+              <h4 className="font-black text-red-800 mb-1">आवेदन / निविदा जमा करने के निर्देश</h4>
+              <p className="text-red-700 text-sm leading-relaxed">
+                1. "आवेदन / निविदा जमा करें" बटन पर क्लिक करें।
+                2. खुलने वाले Google Form में दिए गए लिंक से आवेदन / निविदा फॉर्म डाउनलोड करें।
+                3. फॉर्म को मोबाइल/कंप्यूटर पर भरें या प्रिंट निकालकर भरें।
+                4. भरे हुए फॉर्म को PDF, JPG या PNG फॉर्मेट में तैयार करें।
+                5. आवश्यक दस्तावेज़ों को भी PDF, JPG या PNG फॉर्मेट में तैयार रखें।
+                6. Google Form में मांगी गई जानकारी भरें।
+                7. भरे हुए फॉर्म तथा आवश्यक दस्तावेज़ अपलोड करें।
+                8. सभी जानकारी जांचकर Submit बटन पर क्लिक करें।
+
+                ध्यान दें:
+
+                - सभी जानकारी सही एवं पूर्ण रूप से भरें।
+                - अपलोड की गई फाइलें स्पष्ट और पढ़ने योग्य होनी चाहिए।
+                - अधूरा आवेदन / निविदा स्वीकार नहीं किया जाएगा।
+              </p>
+            </div>
+          </div>
+
+          {/* Steps */}
+          <div className="mb-8 bg-red-50 border-2 border-red-200 rounded-2xl p-5 flex items-start gap-4">
+            <div className="w-9 h-9 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span className="text-red-600 font-black text-lg leading-none">!</span>
+            </div>
+            <div>
               <h4 className="font-black text-red-800 mb-1">महत्वपूर्ण नोट</h4>
               <p className="text-red-700 text-sm leading-relaxed">
                 पूर्व में इस संदर्भ में आमंत्रित सभी आवेदन निरस्त किए जाते हैं। पूर्व के आवेदक भी
@@ -153,6 +179,8 @@ export default function NiyuktiPage() {
               </p>
             </div>
           </div>
+
+
 
           {/* Desktop Table */}
           <div className="hidden md:block rounded-2xl border-2 border-amber-100 overflow-hidden shadow-lg">

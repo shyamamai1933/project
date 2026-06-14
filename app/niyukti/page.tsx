@@ -148,7 +148,7 @@ export default function NiyuktiPage() {
             <div>
               <h4 className="font-black text-red-800 mb-1">आवेदन / निविदा जमा करने के निर्देश</h4>
               <ol className="list-decimal pl-5 space-y-2 text-red-700 text-sm">
-              <li>"आवेदन / निविदा जमा करें" बटन पर क्लिक करें।</li>
+              <li>"आवेदन करें" बटन पर क्लिक करें।</li>
               <li>खुलने वाले Google Form में दिए गए लिंक से आवेदन / निविदा फॉर्म डाउनलोड करें।</li>
               <li>फॉर्म को मोबाइल/कंप्यूटर पर भरें या प्रिंट निकालकर भरें।</li>
               <li>भरे हुए फॉर्म को PDF, JPG या PNG फॉर्मेट में तैयार करें।</li>

@@ -83,7 +83,7 @@ export default function NiyuktiPage() {
               <Calendar size={22} className="text-amber-200" />
               <div className="text-left">
                 <p className="text-xs text-amber-300 font-medium">अंतिम तिथि</p>
-                <p className="text-white font-bold">25 जून 2026</p>
+                <p className="text-white font-bold">6 जुलाई 2026</p>
               </div>
             </div>
             <div className="bg-amber-700/50 rounded-2xl px-6 py-4 flex items-center gap-3">

@@ -186,7 +186,7 @@ export default function Home() {
           <div className="mb-6 animate-bounce">
             <div className="text-6xl md:text-8xl drop-shadow-2xl"></div>
           </div>
-          <h2 className="text-4xl md:text-7xl font-black mb-4 drop-shadow-2xl leading-tight tracking-wide" style={{fontFamily: 'serif'}}>
+          <h2 className="text-4xl md:text-7xl font-black mb-4 drop-shadow-2xl leading-tight tracking-wide" style={{fontFamily:'Georgia,serif'}}>
             जय श्यामा माई
           </h2>
           <p className="text-base md:text-2xl mb-8 drop-shadow-lg max-w-2xl font-medium">

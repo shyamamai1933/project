@@ -42,7 +42,7 @@ export default function Home() {
 
   const galleryImages = [
     '/WhatsApp_Image_2026-06-04_at_8.59.03_PM.jpeg',
-    '/WhatsApp_Image_2026-06-04_at_8.59.02_PM.jpeg',
+    '/WhatsApp_Image_2026-06-24_at_11.28.26_PM.jpeg,
     '/WhatsApp_Image_2026-06-04_at_8.59.04_PM_-_Copy.jpeg',
     '/WhatsApp_Image_2026-06-04_at_8.59.03_PM_(1).jpeg',
   ];

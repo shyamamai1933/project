@@ -5,21 +5,21 @@ import Link from 'next/link';
 import { ArrowLeft, Briefcase, Calendar, ExternalLink, MapPin, Users } from 'lucide-react';
 
 const vacancies = [
-  { sno: 1,  name: 'पुजारी',                      count: '03', category: 'धार्मिक', lastDate: '25 जून 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
-  { sno: 2,  name: 'महिला पुजारी',                count: '01', category: 'धार्मिक', lastDate: '25 जून 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
-  { sno: 3,  name: 'प्रबंधक',                     count: '01', category: 'प्रशासन', lastDate: '25 जून 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
-  { sno: 4,  name: 'सहायक प्रबंधक',              count: '01', category: 'प्रशासन', lastDate: '25 जून 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
-  { sno: 5,  name: 'लेखापाल',                     count: '01', category: 'वित्त',   lastDate: '25 जून 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
-  { sno: 6,  name: 'सहायक लेखापाल',             count: '01', category: 'वित्त',   lastDate: '25 जून 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
-  { sno: 7,  name: 'जनसम्पर्क समन्वयक',         count: '01', category: 'सम्पर्क', lastDate: '25 जून 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
-  { sno: 8,  name: 'कंप्यूटर ऑपरेटर',           count: '01', category: 'तकनीकी', lastDate: '25 जून 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
-  { sno: 9,  name: 'बिजली मिस्त्री',             count: '01', category: 'तकनीकी', lastDate: '25 जून 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
-  { sno: 10, name: 'सुरक्षा एजेन्सी (निविदा)',   count: '—',  category: 'निविदा',  lastDate: '25 जून 2026', applyLink: 'https://forms.gle/fVi1rxTwxaLdAPddA' },
-  { sno: 11, name: 'सफाई एजेन्सी (निविदा)',      count: '—',  category: 'निविदा',  lastDate: '25 जून 2026', applyLink: 'https://forms.gle/fVi1rxTwxaLdAPddA' },
-  { sno: 12, name: 'वाहन पार्किंग (निविदा)',     count: '—',  category: 'निविदा',  lastDate: '25 जून 2026', applyLink: 'https://forms.gle/fVi1rxTwxaLdAPddA' },
-  { sno: 13, name: 'सी.सी.टी.वी. कैमरा (निविदा)', count: '—', category: 'निविदा', lastDate: '25 जून 2026', applyLink: 'https://forms.gle/fVi1rxTwxaLdAPddA' },
-  { sno: 14, name: 'बिजली संचालन (निविदा)',      count: '—',  category: 'निविदा',  lastDate: '25 जून 2026', applyLink: 'https://forms.gle/fVi1rxTwxaLdAPddA' },
-  { sno: 15, name: 'रख-रखाव (निविदा)',           count: '—',  category: 'निविदा',  lastDate: '25 जून 2026', applyLink: 'https://forms.gle/fVi1rxTwxaLdAPddA' },
+  { sno: 1,  name: 'पुजारी',                      count: '03', category: 'धार्मिक', lastDate: '6 जुलाई2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
+  { sno: 2,  name: 'महिला पुजारी',                count: '01', category: 'धार्मिक', lastDate: '6 जुलाई 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
+  { sno: 3,  name: 'प्रबंधक',                     count: '01', category: 'प्रशासन', lastDate: '6 जुलाई 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
+  { sno: 4,  name: 'सहायक प्रबंधक',              count: '01', category: 'प्रशासन', lastDate: '6 जुलाई 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
+  { sno: 5,  name: 'लेखापाल',                     count: '01', category: 'वित्त',   lastDate: '6 जुलाई 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
+  { sno: 6,  name: 'सहायक लेखापाल',             count: '01', category: 'वित्त',   lastDate: '6 जुलाई 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
+  { sno: 7,  name: 'जनसम्पर्क समन्वयक',         count: '01', category: 'सम्पर्क', lastDate: '6 जुलाई 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
+  { sno: 8,  name: 'कंप्यूटर ऑपरेटर',           count: '01', category: 'तकनीकी', lastDate: '6 जुलाई 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
+  { sno: 9,  name: 'बिजली मिस्त्री',             count: '01', category: 'तकनीकी', lastDate: '6 जुलाई 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
+  { sno: 10, name: 'सुरक्षा एजेन्सी (निविदा)',   count: '—',  category: 'निविदा',  lastDate: '6 जुलाई 2026', applyLink: 'https://forms.gle/fVi1rxTwxaLdAPddA' },
+  { sno: 11, name: 'सफाई एजेन्सी (निविदा)',      count: '—',  category: 'निविदा',  lastDate: '6 जुलाई 2026', applyLink: 'https://forms.gle/fVi1rxTwxaLdAPddA' },
+  { sno: 12, name: 'वाहन पार्किंग (निविदा)',     count: '—',  category: 'निविदा',  lastDate: '6 जुलाई 2026', applyLink: 'https://forms.gle/fVi1rxTwxaLdAPddA' },
+  { sno: 13, name: 'सी.सी.टी.वी. कैमरा (निविदा)', count: '—', category: 'निविदा', lastDate: '6 जुलाई 2026', applyLink: 'https://forms.gle/fVi1rxTwxaLdAPddA' },
+  { sno: 14, name: 'बिजली संचालन (निविदा)',      count: '—',  category: 'निविदा',  lastDate: '6 जुलाई 2026', applyLink: 'https://forms.gle/fVi1rxTwxaLdAPddA' },
+  { sno: 15, name: 'रख-रखाव (निविदा)',           count: '—',  category: 'निविदा',  lastDate: '6 जुलाई 2026', applyLink: 'https://forms.gle/fVi1rxTwxaLdAPddA' },
 ];
 
 const categoryColors: Record<string, string> = {
@@ -136,7 +136,7 @@ export default function NiyuktiPage() {
             </h2>
             <p className="text-gray-500 text-sm">
               आवेदन निबंधित डाक / स्पीड पोस्ट द्वारा भेजें — अंतिम तिथि:{' '}
-              <span className="font-bold text-red-600">25 जून 2026</span>
+              <span className="font-bold text-red-600">6 जुलाई 2026</span>
             </p>
           </div>
 

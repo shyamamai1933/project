@@ -549,7 +549,7 @@ export default function Home() {
 
           <div className="border-t border-amber-700 pt-8">
             <p className="text-center text-sm font-medium">
-              © 2024 श्यामा माई मंदिर, दरभंगा। सर्वाधिकार सुरक्षित।
+              © 2026 श्यामा माई मंदिर, दरभंगा। सर्वाधिकार सुरक्षित।
             </p>
             <p className="text-center text-xs text-amber-200 mt-2">
               भक्ति • समर्पण • शांति

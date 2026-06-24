@@ -288,7 +288,7 @@ export default function Home() {
                 यह मंदिर समाज की आस्था, भक्ति और विश्वास का प्रतीक है। माँ शयामा का आशीर्वाद सभी भक्तों के जीवन में सुख, शांति और समृद्धि लाता है।
               </p>
               <p className="text-gray-700 mb-8 leading-relaxed text-lg">
-                हमारा मंदिर न केवल एक धार्मिक स्थान है, बल्कि एक सामाजिक केंद्र है जहाँ समाज के सभी वर्ग के लोग आते हैं और अपनी श्रद्धा प्रकट करते हैं।
+                यह मंदिर न केवल एक धार्मिक स्थान है, बल्कि एक सामाजिक केंद्र है जहाँ समाज के सभी वर्ग के लोग आते हैं और अपनी श्रद्धा प्रकट करते हैं।
               </p>
               <button className="px-8 py-4 bg-gradient-to-r from-amber-700 to-amber-800 text-white font-bold rounded-xl hover:from-amber-800 hover:to-amber-900 transition-all duration-300 transform hover:scale-105 shadow-lg">
                 अधिक जानें

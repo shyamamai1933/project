@@ -184,7 +184,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4 pt-20">
           <div className="mb-6 animate-bounce">
-            <div className="text-6xl md:text-8xl drop-shadow-2xl">ॐ</div>
+            <div className="text-6xl md:text-8xl drop-shadow-2xl"></div>
           </div>
           <h2 className="text-4xl md:text-7xl font-black mb-4 drop-shadow-2xl leading-tight tracking-wide">
             जय श्यामा माई

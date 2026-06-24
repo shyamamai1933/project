@@ -521,7 +521,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-12 mb-12">
             <div>
               <h3 className="font-black text-lg mb-4 flex items-center gap-2">
-                <span className="text-2xl">ॐ</span> त्वरित लिंक
+                <span className="text-2xl"></span> त्वरित लिंक
               </h3>
               <ul className="space-y-2 text-sm font-medium">
                 <li><a href="#home" className="hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block">→ होम</a></li>

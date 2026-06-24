@@ -284,7 +284,7 @@ export default function NiyuktiPage() {
             मुख्य पृष्ठ पर वापस जाएं
           </Link>
           <p className="text-amber-400 text-xs mt-4">
-            © 2024 माँ श्यामा माई मंदिर, दरभंगा। सर्वाधिकार सुरक्षित।
+            © 2026 माँ श्यामा माई मंदिर, दरभंगा। सर्वाधिकार सुरक्षित।
           </p>
         </div>
       </footer>

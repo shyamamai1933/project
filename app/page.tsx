@@ -175,7 +175,7 @@ export default function Home() {
       {/* Hero Section */}
       <section id="home" className="relative h-[500px] md:h-[650px] overflow-hidden">
         <Image
-          src="/WhatsApp_Image_2026-06-04_at_8.59.03_PM.jpeg"
+          src="/WhatsApp_Image_2026-06-24_at_11.28.26_PM.jpeg"
           alt="Maa Shyama Mandir"
           fill
           className="object-cover"

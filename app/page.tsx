@@ -94,8 +94,13 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-amber-700 to-amber-900 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-                ॐ
+             <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg border-2 border-amber-700">
+  <img 
+    src="/deity.jpg" 
+    alt="माँ श्यामा माई"
+    className="w-full h-full object-cover"
+  />
+</div>
               </div>
               <div className="hidden sm:block">
                 <h1 className="text-lg font-bold text-amber-950 tracking-wide">माँ श्यामा माई</h1>

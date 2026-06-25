@@ -123,7 +123,27 @@ export default function NiyuktiPage() {
           </div>
         </div>
       </section>
-
+      {/* Aam Suchna - Date Extension Notice */}
+<section className="py-6 px-4">
+  <div className="max-w-3xl mx-auto">
+    <div className="bg-amber-50 border-l-4 border-amber-700 rounded-lg p-6 shadow-sm">
+      <h2 className="text-lg font-bold text-amber-900 mb-3 text-center">
+        📢 आम सूचना
+      </h2>
+      <p className="text-gray-800 leading-relaxed text-sm sm:text-base">
+        विज्ञापन सह निविदा, जो विभिन्न पदों एवं सेवा हेतु है। इसकी अंतिम तिथि
+        दिनांक 25 जून 26 से विस्तारित कर दिनांक{" "}
+        <strong>6 जुलाई 26</strong> तक सायं{" "}
+        <strong>5 बजे</strong> तक की जाती है।
+      </p>
+      <div className="mt-4 text-right text-sm text-gray-600">
+        <p>माननीय अध्यक्ष के आदेश से</p>
+        <p className="font-semibold text-amber-900">मधुबाला सिन्हा</p>
+        <p>प्र० सह सचिव</p>
+      </div>
+    </div>
+  </div>
+</section>
       {/* Vacancies Table */}
       <section className="py-12 px-4 bg-white">
         <div className="max-w-5xl mx-auto">

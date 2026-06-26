@@ -123,24 +123,51 @@ export default function NiyuktiPage() {
           </div>
         </div>
       </section>
-      {/* Aam Suchna - Date Extension Notice */}
+      {/* Important Notice - Date Extension */}
 <section className="py-6 px-4">
   <div className="max-w-3xl mx-auto">
-    <div className="bg-amber-50 border-l-4 border-amber-700 rounded-lg p-6 shadow-sm">
-      <h2 className="text-lg font-bold text-amber-900 mb-3 text-center">
-        📢 आम सूचना
-      </h2>
-      <p className="text-gray-800 leading-relaxed text-sm sm:text-base">
-        विज्ञापन सह निविदा, जो विभिन्न पदों एवं सेवा हेतु है। इसकी अंतिम तिथि
-        दिनांक 25 जून 26 से विस्तारित कर दिनांक{" "}
-        <strong>6 जुलाई 26</strong> तक सायं{" "}
-        <strong>5 बजे</strong> तक की जाती है।
-      </p>
-      <div className="mt-4 text-right text-sm text-gray-600">
-        <p>माननीय अध्यक्ष के आदेश से</p>
-        <p className="font-semibold text-amber-900">मधुबाला सिन्हा</p>
-        <p>प्र० सह सचिव</p>
+    <div className="bg-red-50 border-2 border-red-600 rounded-xl p-6 shadow-md">
+      
+      {/* Notice Header */}
+      <div className="flex items-center gap-2 mb-4">
+        <span className="text-2xl">🔴</span>
+        <h2 className="text-red-700 font-bold text-lg sm:text-xl">
+          महत्वपूर्ण सूचना
+        </h2>
       </div>
+
+      {/* Headline */}
+      <h3 className="font-bold text-gray-900 text-base sm:text-lg mb-3 leading-snug">
+        श्यामा मंदिर में नियुक्ति के लिए आवेदन अब 6 जुलाई तक
+      </h3>
+
+      {/* Body */}
+      <div className="text-gray-800 text-sm sm:text-base leading-relaxed space-y-3">
+        <p>
+          श्यामा मंदिर न्यास समिति के अध्यक्ष <strong>प्रो. सुरेंद्र मोहन झा</strong> ने
+          बताया कि विभिन्न पदों पर नियुक्ति हेतु आवेदन की अंतिम तिथि 25 जून से
+          विस्तारित कर <strong className="text-red-700">6 जुलाई 2026, सायं 5 बजे</strong> तक
+          कर दी गई है।
+        </p>
+
+        {/* Vacancies */}
+        <div className="bg-white border border-red-200 rounded-lg p-4 mt-3">
+          <p className="font-semibold text-gray-900 mb-2">रिक्त पदों का विवरण:</p>
+          <ul className="space-y-1 text-sm text-gray-700">
+            <li>• प्रबंधक, सह-प्रबंधक, लेखपाल, सहायक लेखापाल — <strong>1-1 पद</strong></li>
+            <li>• बिजली मिस्त्री, जनसंपर्क समन्वयक — <strong>1-1 पद</strong></li>
+            <li>• कंप्यूटर ऑपरेटर — <strong>2 पद</strong></li>
+            <li>• पुजारी — <strong>4 पद</strong>
+              <span className="text-red-600 text-xs ml-1">(1 पद महिला अभ्यर्थी हेतु आरक्षित)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <p className="mt-4 text-xs text-red-600 font-medium text-right">
+        📅 अंतिम तिथि: 6 जुलाई 2026 | सायं 5 बजे तक
+      </p>
     </div>
   </div>
 </section>

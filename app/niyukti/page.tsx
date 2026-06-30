@@ -83,7 +83,7 @@ export default function NiyuktiPage() {
               <Calendar size={22} className="text-amber-200" />
               <div className="text-left">
                 <p className="text-xs text-amber-300 font-medium">अंतिम तिथि</p>
-                <p className="text-white font-bold">6 जुलाई 2026</p>
+                <p className="text-white font-bold">25 जून 2026</p>
               </div>
             </div>
             <div className="bg-amber-700/50 rounded-2xl px-6 py-4 flex items-center gap-3">
@@ -123,7 +123,7 @@ export default function NiyuktiPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Vacancies Table */}
       <section className="py-12 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
@@ -136,11 +136,11 @@ export default function NiyuktiPage() {
             </h2>
             <p className="text-gray-500 text-sm">
               आवेदन निबंधित डाक / स्पीड पोस्ट द्वारा भेजें — अंतिम तिथि:{' '}
-              <span className="font-bold text-red-600">6 जुलाई 2026</span>
+              <span className="font-bold text-red-600">25 जून 2026</span>
             </p>
           </div>
 
-          {/* Important Note */}
+                    {/* Important Note */}
           <div className="mb-8 bg-red-50 border-2 border-red-200 rounded-2xl p-5 flex items-start gap-4">
             <div className="w-9 h-9 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
               <span className="text-red-600 font-black text-lg leading-none">!</span>
@@ -182,8 +182,6 @@ export default function NiyuktiPage() {
             </div>
           </div>
 
-
-
           {/* Desktop Table */}
           <div className="hidden md:block rounded-2xl border-2 border-amber-100 overflow-hidden shadow-lg">
             <table className="w-full text-sm">
@@ -219,8 +217,6 @@ export default function NiyuktiPage() {
                     <td className="px-5 py-4 text-center">
                       <a
                         href={v.applyLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-amber-700 to-amber-800 text-white text-xs font-bold rounded-lg hover:from-amber-800 hover:to-amber-900 transition-all duration-200 hover:shadow-md transform hover:scale-105"
                       >
                         आवेदन करें
@@ -259,8 +255,6 @@ export default function NiyuktiPage() {
                   </p>
                   <a
                     href={v.applyLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-amber-700 to-amber-800 text-white text-xs font-bold rounded-lg"
                   >
                     आवेदन करें
@@ -284,7 +278,7 @@ export default function NiyuktiPage() {
             मुख्य पृष्ठ पर वापस जाएं
           </Link>
           <p className="text-amber-400 text-xs mt-4">
-            © 2026 माँ श्यामा माई मंदिर, दरभंगा। सर्वाधिकार सुरक्षित।
+            © 2024 माँ श्यामा माई मंदिर, दरभंगा। सर्वाधिकार सुरक्षित।
           </p>
         </div>
       </footer>

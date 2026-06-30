@@ -42,7 +42,7 @@ export default function Home() {
 
   const galleryImages = [
     '/WhatsApp_Image_2026-06-04_at_8.59.03_PM.jpeg',
-    '/WhatsApp_Image_2026-06-24_at_11.28.26_PM.jpeg,
+    '/WhatsApp_Image_2026-06-04_at_8.59.02_PM.jpeg',
     '/WhatsApp_Image_2026-06-04_at_8.59.04_PM_-_Copy.jpeg',
     '/WhatsApp_Image_2026-06-04_at_8.59.03_PM_(1).jpeg',
   ];
@@ -80,10 +80,10 @@ export default function Home() {
   ];
 
   const donationTiers = [
-    { amount: '₹ 1101', label: 'अभिषेक पूजन' },
-    { amount: '₹ 1101', label: 'विशेष पूजा' },
-    { amount: '₹ 1101', label: 'हवन पूजन' },
-    { amount: '₹ 1101', label: 'श्राद्ध और तर्पण' },
+    { amount: '₹ 101', label: 'अभिषेक पूजन' },
+    { amount: '₹ 251', label: 'विशेष पूजा' },
+    { amount: '₹ 501', label: 'हवन पूजन' },
+    { amount: '₹ 1100', label: 'श्राद्ध और तर्पण' },
   ];
 
   return (
@@ -94,13 +94,8 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center gap-3">
-             <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg border-2 border-amber-700">
-  <img 
-    src="/deity.jpg" 
-    alt="माँ श्यामा माई"
-    className="w-full h-full object-cover"
-  />
-</div>
+              <div className="w-12 h-12 bg-gradient-to-br from-amber-700 to-amber-900 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                ॐ
               </div>
               <div className="hidden sm:block">
                 <h1 className="text-lg font-bold text-amber-950 tracking-wide">माँ श्यामा माई</h1>
@@ -180,7 +175,7 @@ export default function Home() {
       {/* Hero Section */}
       <section id="home" className="relative h-[500px] md:h-[650px] overflow-hidden">
         <Image
-          src="/WhatsApp_Image_2026-06-24_at_11.28.26_PM.jpeg"
+          src="/WhatsApp_Image_2026-06-04_at_8.59.03_PM.jpeg"
           alt="Maa Shyama Mandir"
           fill
           className="object-cover"
@@ -189,13 +184,13 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4 pt-20">
           <div className="mb-6 animate-bounce">
-            <div className="text-6xl md:text-8xl drop-shadow-2xl"></div>
+            <div className="text-6xl md:text-8xl drop-shadow-2xl">ॐ</div>
           </div>
-          <h2 className="text-4xl md:text-7xl font-black mb-4 drop-shadow-2xl leading-tight tracking-wide" style={{fontFamily:'Georgia,serif'}}>
-            जय श्यामा माई
+          <h2 className="text-4xl md:text-7xl font-black mb-4 drop-shadow-2xl leading-tight tracking-wide">
+            जय माँ श्यामा माई
           </h2>
           <p className="text-base md:text-2xl mb-8 drop-shadow-lg max-w-2xl font-medium">
-          
+            आस्था, भक्ति और विश्वास का प्रतीक
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <button className="px-8 py-4 bg-gradient-to-r from-amber-600 to-amber-700 text-white font-bold rounded-xl hover:from-amber-700 hover:to-amber-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
@@ -256,8 +251,8 @@ export default function Home() {
             {[
               { icon: Clock, label: 'खुलने का समय', value: '5:00 AM - 10:00 PM' },
               { icon: MapPin, label: 'स्थान', value: 'दरभंगा, बिहार' },
-              { icon: Phone, label: 'फोन', value: '+91 91919 19191' },
-              { icon: Mail, label: 'ईमेल', value: 'info@maashyamamandir.in' },
+              { icon: Phone, label: 'फोन', value: '+91 XXXXX XXXXX' },
+              { icon: Mail, label: 'ईमेल', value: 'info@maashyama.in' },
             ].map((item, idx) => (
               <div
                 key={idx}
@@ -287,13 +282,13 @@ export default function Home() {
                 <span className="text-amber-900 font-bold text-sm">मंदिर परिचय</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
-                श्यामा माई मंदिर
+                माँ श्यामा माई मंदिर
               </h2>
               <p className="text-gray-700 mb-4 leading-relaxed text-lg">
                 यह मंदिर समाज की आस्था, भक्ति और विश्वास का प्रतीक है। माँ शयामा का आशीर्वाद सभी भक्तों के जीवन में सुख, शांति और समृद्धि लाता है।
               </p>
               <p className="text-gray-700 mb-8 leading-relaxed text-lg">
-                यह मंदिर न केवल एक धार्मिक स्थान है, बल्कि एक सामाजिक केंद्र है जहाँ समाज के सभी वर्ग के लोग आते हैं और अपनी श्रद्धा प्रकट करते हैं।
+                हमारा मंदिर न केवल एक धार्मिक स्थान है, बल्कि एक सामाजिक केंद्र है जहाँ समाज के सभी वर्ग के लोग आते हैं और अपनी श्रद्धा प्रकट करते हैं।
               </p>
               <button className="px-8 py-4 bg-gradient-to-r from-amber-700 to-amber-800 text-white font-bold rounded-xl hover:from-amber-800 hover:to-amber-900 transition-all duration-300 transform hover:scale-105 shadow-lg">
                 अधिक जानें
@@ -441,7 +436,7 @@ export default function Home() {
                   <div>
                     <h4 className="font-bold text-lg mb-1">पता</h4>
                     <p className="text-amber-100 leading-relaxed">
-                      श्यामा माई मंदिर<br />
+                      माँ श्यामा माई मंदिर<br />
                       दरभंगा, बिहार 846004
                     </p>
                   </div>
@@ -453,17 +448,17 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-1">फोन</h4>
-                    <p className="text-amber-100">+91 91919 19191</p>
+                    <p className="text-amber-100">+91 XXXXX XXXXX</p>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
                   <div className="p-3 bg-amber-700 rounded-xl flex-shrink-0">
-                    <Mail size={27} />
+                    <Mail size={24} />
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-1">ईमेल</h4>
-                    <p className="text-amber-100">info@maashyamamandir.in</p>
+                    <p className="text-amber-100">info@maashyama.in</p>
                   </div>
                 </div>
               </div>
@@ -526,7 +521,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-12 mb-12">
             <div>
               <h3 className="font-black text-lg mb-4 flex items-center gap-2">
-                <span className="text-2xl"></span> त्वरित लिंक
+                <span className="text-2xl">ॐ</span> त्वरित लिंक
               </h3>
               <ul className="space-y-2 text-sm font-medium">
                 <li><a href="#home" className="hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block">→ होम</a></li>
@@ -546,7 +541,7 @@ export default function Home() {
             </div>
             <div>
               <h3 className="font-black text-lg mb-4">मंदिर की जानकारी</h3>
-              <p className="text-sm font-medium mb-2">श्यामा माई मंदिर</p>
+              <p className="text-sm font-medium mb-2">माँ श्यामा माई मंदिर</p>
               <p className="text-sm font-medium mb-4">दरभंगा, बिहार 846004</p>
               <p className="text-xs text-amber-300">सभी भक्तों के लिए खुला</p>
             </div>
@@ -554,7 +549,7 @@ export default function Home() {
 
           <div className="border-t border-amber-700 pt-8">
             <p className="text-center text-sm font-medium">
-              © 2026 श्यामा माई मंदिर, दरभंगा। सर्वाधिकार सुरक्षित।
+              © 2024 माँ श्यामा माई मंदिर, दरभंगा। सर्वाधिकार सुरक्षित।
             </p>
             <p className="text-center text-xs text-amber-200 mt-2">
               भक्ति • समर्पण • शांति

@@ -123,40 +123,7 @@ export default function NiyuktiPage() {
           </div>
         </div>
       </section>
-      {/* Important Notice - Date Extension */}
-<section className="py-6 px-4">
-  <div className="max-w-3xl mx-auto">
-    <div className="bg-red-50 border-2 border-red-600 rounded-xl p-6 shadow-md">
-      <h2 className="text-red-700 font-bold text-lg text-center mb-4">
-        🔴 महत्वपूर्ण सूचना
-      </h2>
-      <div className="text-gray-800 text-sm sm:text-base leading-relaxed space-y-3">
-        <p className="font-bold text-center">मां श्यामा मंदिर न्यास समिति</p>
-        <p className="text-center font-semibold">आम सूचना</p>
-        <p>
-          विज्ञापन सह निविदा, जो विभिन्न पदों एवं सेवा हेतु है। इसकी अंतिम तिथि दिनांक 25 जून 26 से विस्तारित कर दिनांक 6 जुलाई 26 तक सायं 5 बजे तक की जाती है।
-        </p>
-        <p className="text-right mt-4">माननीय अध्यक्ष के आदेश से</p>
-        <p className="text-right font-semibold">मधुबाला सिन्हा</p>
-        <p className="text-right">प्र सह सचिव</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-{/* News Article */}
-<section className="py-6 px-4">
-  <div className="max-w-3xl mx-auto">
-    <div className="bg-amber-50 border-2 border-amber-700 rounded-xl p-6 shadow-md">
-      <h2 className="text-amber-900 font-bold text-lg text-center mb-4 border-b border-amber-300 pb-3">
-        श्यामा मंदिर में नियुक्ति के लिए आवेदन अब 6 जुलाई तक
-      </h2>
-      <p className="text-gray-800 text-sm sm:text-base leading-relaxed">
-        श्यामा मंदिर के समुचित प्रबंधन के लिए विभिन्न पदों पर नियुक्ति हेतु आवेदन की अंतिम तिथि 6 जुलाई तक विस्तारित कर दी गई है। जानकारी देते हुए श्यामा मंदिर न्यास समिति के अध्यक्ष प्रो. सुरेंद्र मोहन झा ने बताया कि विभिन्न पदों पर नियुक्ति के लिए पूर्व में प्रकाशित विज्ञापन में आवेदन की अंतिम तिथि 25 जून निर्धारित की गई थी, लेकिन यह तिथि अब 6 जुलाई तक विस्तारित कर दी गई है। उन्होंने बताया कि श्यामा मंदिर प्रबंधन के लिए प्रबंधक, सह-प्रबंधक, लेखपाल, सहायक लेखापाल, बिजली मिस्त्री एवं जनसंपर्क समन्वयक के एक-एक पद पर नियुक्ति हेतु आवेदन आमंत्रित किए गए हैं। जबकि कंप्यूटर ऑपरेटर के लिए दो और पुजारी के लिए चार पदों की रिक्तियां प्रकाशित की गई हैं। पुजारी पद के लिए निर्धारित चार रिक्तियों में एक पद महिला अभ्यर्थी के लिए आरक्षित है।
-      </p>
-    </div>
-  </div>
-</section>
+      
       {/* Vacancies Table */}
       <section className="py-12 px-4 bg-white">
         <div className="max-w-5xl mx-auto">

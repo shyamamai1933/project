@@ -184,10 +184,10 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4 pt-20">
           <div className="mb-6 animate-bounce">
-            <div className="text-6xl md:text-8xl drop-shadow-2xl">ॐ</div>
+            <div className="text-6xl md:text-8xl drop-shadow-2xl"></div>
           </div>
           <h2 className="text-4xl md:text-7xl font-black mb-4 drop-shadow-2xl leading-tight tracking-wide">
-            जय माँ श्यामा माई
+            जय श्यामा माई
           </h2>
           <p className="text-base md:text-2xl mb-8 drop-shadow-lg max-w-2xl font-medium">
             आस्था, भक्ति और विश्वास का प्रतीक
@@ -251,8 +251,8 @@ export default function Home() {
             {[
               { icon: Clock, label: 'खुलने का समय', value: '5:00 AM - 10:00 PM' },
               { icon: MapPin, label: 'स्थान', value: 'दरभंगा, बिहार' },
-              { icon: Phone, label: 'फोन', value: '+91 XXXXX XXXXX' },
-              { icon: Mail, label: 'ईमेल', value: 'info@maashyama.in' },
+              { icon: Phone, label: 'फोन', value: '+91 91919 19191' },
+              { icon: Mail, label: 'ईमेल', value: 'accounts@maashyamamandir.in' },
             ].map((item, idx) => (
               <div
                 key={idx}
@@ -448,7 +448,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-1">फोन</h4>
-                    <p className="text-amber-100">+91 XXXXX XXXXX</p>
+                    <p className="text-amber-100">+91 91919 19191</p>
                   </div>
                 </div>
 
@@ -458,7 +458,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-1">ईमेल</h4>
-                    <p className="text-amber-100">info@maashyama.in</p>
+                    <p className="text-amber-100">accounts@maashyamamandir.in</p>
                   </div>
                 </div>
               </div>
@@ -541,7 +541,7 @@ export default function Home() {
             </div>
             <div>
               <h3 className="font-black text-lg mb-4">मंदिर की जानकारी</h3>
-              <p className="text-sm font-medium mb-2">माँ श्यामा माई मंदिर</p>
+              <p className="text-sm font-medium mb-2">श्यामा माई मंदिर</p>
               <p className="text-sm font-medium mb-4">दरभंगा, बिहार 846004</p>
               <p className="text-xs text-amber-300">सभी भक्तों के लिए खुला</p>
             </div>
@@ -549,7 +549,7 @@ export default function Home() {
 
           <div className="border-t border-amber-700 pt-8">
             <p className="text-center text-sm font-medium">
-              © 2024 माँ श्यामा माई मंदिर, दरभंगा। सर्वाधिकार सुरक्षित।
+              © 2024 श्यामा माई मंदिर, दरभंगा। सर्वाधिकार सुरक्षित।
             </p>
             <p className="text-center text-xs text-amber-200 mt-2">
               भक्ति • समर्पण • शांति

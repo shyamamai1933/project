@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ArrowLeft, Briefcase, Calendar, ExternalLink, MapPin, Users } from 'lucide-react';
 
 const vacancies = [
-  { sno: 1,  name: 'पुजारी',                      count: '03', category: 'धार्मिक', lastDate: '6 जुलाई2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
+  { sno: 1,  name: 'पुजारी',                      count: '03', category: 'धार्मिक', lastDate: '6 जुलाई 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
   { sno: 2,  name: 'महिला पुजारी',                count: '01', category: 'धार्मिक', lastDate: '6 जुलाई 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
   { sno: 3,  name: 'प्रबंधक',                     count: '01', category: 'प्रशासन', lastDate: '6 जुलाई 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
   { sno: 4,  name: 'सहायक प्रबंधक',              count: '01', category: 'प्रशासन', lastDate: '6 जुलाई 2026', applyLink: 'https://forms.gle/zdbkbgDm3gW5SxBz5' },
@@ -83,7 +83,7 @@ export default function NiyuktiPage() {
               <Calendar size={22} className="text-amber-200" />
               <div className="text-left">
                 <p className="text-xs text-amber-300 font-medium">अंतिम तिथि</p>
-                <p className="text-white font-bold">25 जून 2026</p>
+                <p className="text-white font-bold">6 जुलाई 2026</p>
               </div>
             </div>
             <div className="bg-amber-700/50 rounded-2xl px-6 py-4 flex items-center gap-3">
@@ -136,7 +136,7 @@ export default function NiyuktiPage() {
             </h2>
             <p className="text-gray-500 text-sm">
               आवेदन निबंधित डाक / स्पीड पोस्ट द्वारा भेजें — अंतिम तिथि:{' '}
-              <span className="font-bold text-red-600">25 जून 2026</span>
+              <span className="font-bold text-red-600">6 जुलाई2026</span>
             </p>
           </div>
 
@@ -291,7 +291,7 @@ export default function NiyuktiPage() {
             मुख्य पृष्ठ पर वापस जाएं
           </Link>
           <p className="text-amber-400 text-xs mt-4">
-            © 2024 माँ श्यामा माई मंदिर, दरभंगा। सर्वाधिकार सुरक्षित।
+            © 2026 श्यामा माई मंदिर, दरभंगा। सर्वाधिकार सुरक्षित।
           </p>
         </div>
       </footer>

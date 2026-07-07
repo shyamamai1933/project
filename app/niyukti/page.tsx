@@ -76,7 +76,7 @@ export default function NiyuktiPage() {
           </h1>
           <p className="text-amber-200 text-lg md:text-xl font-medium mb-2">दरभंगा</p>
           <p className="text-amber-300 text-base max-w-2xl mx-auto">
-            विज्ञापन सह निविदा — रिक्त पदों पर नियुक्ति हेतु आवेदन आमंत्रित हैं
+          आवेदन बंद हो चुके है|  
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <div className="bg-amber-700/50 rounded-2xl px-6 py-4 flex items-center gap-3">

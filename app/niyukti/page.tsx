@@ -58,7 +58,7 @@ export default function NiyuktiPage() {
           <div className="ml-auto">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-red-100 text-red-700 text-xs font-bold rounded-full border border-red-200 animate-pulse">
               <span className="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
-              आवेदन खुले हैं
+              आवेदन बंद हो चुके है|
             </span>
           </div>
         </div>

@@ -252,7 +252,7 @@ export default function Home() {
               { icon: Clock, label: 'खुलने का समय', value: '5:00 AM - 10:00 PM' },
               { icon: MapPin, label: 'स्थान', value: 'दरभंगा, बिहार' },
               { icon: Phone, label: 'फोन', value: '+91 91919 19191' },
-              { icon: Mail, label: 'ईमेल', value: 'accounts@maashyamamandir.in' },
+              { icon: Mail, label: 'ईमेल', value: 'shyamamai1933@gmail.com' },
             ].map((item, idx) => (
               <div
                 key={idx}
@@ -285,10 +285,10 @@ export default function Home() {
                 माँ श्यामा माई मंदिर
               </h2>
               <p className="text-gray-700 mb-4 leading-relaxed text-lg">
-                यह मंदिर समाज की आस्था, भक्ति और विश्वास का प्रतीक है। माँ शयामा का आशीर्वाद सभी भक्तों के जीवन में सुख, शांति और समृद्धि लाता है।
+                श्यामा माई मंदिर बिहार के दरभंगा जिले में ललित नारायण मिथिला विश्वविद्यालय परिसर के भीतर स्थित माता काली को समर्पित एक अत्यंत प्रसिद्ध और पवित्र सिद्धपीठ है। इस ऐतिहासिक मंदिर का निर्माण वर्ष 1933 में दरभंगा राज के महाराजा कामेश्वर सिंह ने अपने पिता महाराजा रामेश्वर सिंह की चिता भूमि (श्मशान) पर करवाया था, जो स्वयं एक महान तंत्र साधक थे। मंदिर के गर्भगृह में भगवान शिव की छाती पर विराजमान माँ श्यामा (काली) की एक विशाल और अलौकिक प्रतिमा स्थापित है, जिनके दाहिनी ओर महाकाल और बाईं ओर भगवान गणेश तथा बटुक भैरव की मूर्तियाँ हैं। इस मंदिर की सबसे अनोखी विशेषता यह है कि आमतौर पर श्मशान भूमि पर बने मंदिरों में मांगलिक कार्य वर्जित होते हैं, लेकिन यहाँ माता को कुलदेवी मानकर शादी-विवाह, मुंडन और उपनयन जैसे सभी शुभ संस्कार अत्यंत धूमधाम से संपन्न किए जाते हैं। यहाँ वैदिक और तांत्रिक दोनों विधियों से पूजा की जाती है, और विशेषकर नवरात्रि के समय यहाँ भक्तों की भारी भीड़ उमड़ती है।
               </p>
               <p className="text-gray-700 mb-8 leading-relaxed text-lg">
-                हमारा मंदिर न केवल एक धार्मिक स्थान है, बल्कि एक सामाजिक केंद्र है जहाँ समाज के सभी वर्ग के लोग आते हैं और अपनी श्रद्धा प्रकट करते हैं।
+              यह मंदिर न केवल एक धार्मिक स्थान है, बल्कि एक सामाजिक केंद्र है जहाँ समाज के सभी वर्ग के लोग आते हैं और अपनी श्रद्धा प्रकट करते हैं।
               </p>
               <button className="px-8 py-4 bg-gradient-to-r from-amber-700 to-amber-800 text-white font-bold rounded-xl hover:from-amber-800 hover:to-amber-900 transition-all duration-300 transform hover:scale-105 shadow-lg">
                 अधिक जानें
@@ -311,14 +311,11 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-2 bg-amber-100 rounded-full mb-4">
-              <span className="text-amber-900 font-bold text-sm">हमारी सेवाएँ</span>
+              <span className="text-amber-900 font-bold text-sm">सेवाएँ</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
               मंदिर की पवित्र सेवाएँ
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              माँ की भक्ति और आराधना के लिए विशेष सेवाएं
-            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {serviceItems.map((item, idx) => (
@@ -436,7 +433,7 @@ export default function Home() {
                   <div>
                     <h4 className="font-bold text-lg mb-1">पता</h4>
                     <p className="text-amber-100 leading-relaxed">
-                      माँ श्यामा माई मंदिर<br />
+                      माँ श्यामा माई मंदिर, कमेश्वरनगर <br />
                       दरभंगा, बिहार 846004
                     </p>
                   </div>
@@ -549,7 +546,7 @@ export default function Home() {
 
           <div className="border-t border-amber-700 pt-8">
             <p className="text-center text-sm font-medium">
-              © 2024 श्यामा माई मंदिर, दरभंगा। सर्वाधिकार सुरक्षित।
+              © 2026 श्यामा माई मंदिर, दरभंगा। सर्वाधिकार सुरक्षित।
             </p>
             <p className="text-center text-xs text-amber-200 mt-2">
               भक्ति • समर्पण • शांति

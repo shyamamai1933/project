@@ -178,7 +178,7 @@ export default function Home() {
           src="/WhatsApp_Image_2026-06-04_at_8.59.02_PM.jpeg"
           alt="Maa Shyama Mandir"
           fill
-          className="object-cover"
+          className="object-contain"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>

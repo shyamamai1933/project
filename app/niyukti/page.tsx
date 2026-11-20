@@ -15,17 +15,16 @@ interface NotificationItem {
 
 // नई सूचना / निविदा / नियुक्ति जोड़ने के लिए नीचे दिए गए array में ऑब्जेक्ट जोड़ें
 const notifications: NotificationItem[] = [
-  /* उदाहरण (Example):
   {
     id: '04/2026',
-    title: 'नवाह महायज्ञ हेतु खाद्यान्न आपूर्ति निविदा (सूचना सं. 04/2026)',
+    title: 'नवाह 2026 हेतु विभिन्न सामग्री एवं सेवाओं की अल्पकालीन निविदा (सूचना सं०-04/2026)',
     category: 'निविदा',
     publishedDate: '20 नवंबर 2026',
-    lastDate: '27 नवंबर 2026',
+    lastDate: '24 नवंबर 2026 (अपराह्न 2:00 बजे)',
     status: 'सक्रिय',
-    link: '/notices/tender-04-2026.pdf',
+    link: '/tender-04-2026.pdf', // अगर फाइल का नाम नहीं बदला है, तो '/sarvajanik_suchna_04_2026.pdf' लिखें
   },
-  */
+];
 ];
 
 const categoryColors: Record<NotificationItem['category'], string> = {

@@ -25,7 +25,6 @@ const notifications: NotificationItem[] = [
     link: '/tender-04-2026.pdf', // अगर फाइल का नाम नहीं बदला है, तो '/sarvajanik_suchna_04_2026.pdf' लिखें
   },
 ];
-];
 
 const categoryColors: Record<NotificationItem['category'], string> = {
   निविदा: 'bg-purple-100 text-purple-700 border border-purple-200',

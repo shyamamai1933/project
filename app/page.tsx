@@ -1,557 +1,477 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Menu, X, MapPin, Clock, Phone, Mail, Heart, ShoppingCart, Bell, ChevronRight, Briefcase } from 'lucide-react';
-import Image from 'next/image';
+import { useState } from 'react';
 import Link from 'next/link';
+import {
+  Bell,
+  Calendar,
+  ChevronRight,
+  Clock,
+  ExternalLink,
+  FileText,
+  Mail,
+  MapPin,
+  Menu,
+  Phone,
+  X,
+} from 'lucide-react';
 
-export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [currentAnnouncement, setCurrentAnnouncement] = useState(0);
+// होमपेज पर दिखने वाली नवीनतम सूचनाएं (नई निविदा/नियुक्ति आने पर यहाँ जोड़ें)
+const latestNotices = [
+  {
+    id: '04/2026',
+    category: 'निविदा',
+    title: 'नवाह 2026 हेतु विभिन्न सामग्री एवं सेवाओं की अल्पकालीन निविदा (सूचना सं०-04/2026)',
+    lastDate: '24 नवंबर 2026 (अपराह्न 2:00 बजे)',
+    status: 'सक्रिय',
+    link: '/tender-04-2026.pdf',
+  },
+];
 
-  const announcements = [
-    {
-      id: 1,
-      title: 'नवरात्रि महोत्सव',
-      description: 'प्रतिदिन विशेष आरती और प्रसाद वितरण का आयोजन',
-      date: 'अक्टूबर 2-11',
-      type: 'festival',
-    },
-    {
-      id: 2,
-      title: 'महामाया पूजा',
-      description: 'विशेष अभिषेक पूजा में भाग लें और आशीर्वाद प्राप्त करें',
-      date: 'प्रतिशनिवार',
-      type: 'puja',
-    },
-    {
-      id: 3,
-      title: 'दर्शन समय विस्तारित',
-      description: 'रविवार को दर्शन समय सुबह 4:00 AM से रात 11:00 PM तक',
-      date: 'प्रतिरविवार',
-      type: 'notice',
-    },
-  ];
+// गैलरी की तस्वीरें — public/ फोल्डर में असली फोटो डालकर src बदल लें
+const galleryPhotos = [
+  {
+    id: 1,
+    title: 'माँ श्यामा माई मंदिर मुख्य परिसर',
+    caption: 'माधवेश्वर परिसर, दरभंगा',
+    src: '/gallery-1.jpg',
+  },
+  {
+    id: 2,
+    title: 'गर्भगृह एवं दिव्य श्रृंगार',
+    caption: 'माँ श्यामा (काली) की अलौकिक प्रतिमा',
+    src: '/gallery-2.jpg',
+  },
+  {
+    id: 3,
+    title: 'नवाह महायज्ञ एवं पर्व उत्सव',
+    caption: 'वार्षिक धार्मिक आयोजन',
+    src: '/gallery-3.jpg',
+  },
+];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentAnnouncement((prev) => (prev + 1) % announcements.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const galleryImages = [
-    '/WhatsApp_Image_2026-06-04_at_8.59.03_PM.jpeg',
-    '/WhatsApp_Image_2026-06-04_at_8.59.02_PM.jpeg',
-    '/WhatsApp_Image_2026-06-04_at_8.59.04_PM_-_Copy.jpeg',
-    '/WhatsApp_Image_2026-06-04_at_8.59.03_PM_(1).jpeg',
-  ];
-
-  const navItems = [
-    { label: 'होम', href: '#home' },
-    { label: 'परिचय', href: '#about' },
-    { label: 'दर्शन', href: '#darshan' },
-    { label: 'गैलरी', href: '#gallery' },
-    { label: 'समाचार', href: '#announcements' },
-    { label: 'संपर्क', href: '#contact' },
-  ];
-
-  const serviceItems = [
-    {
-      icon: '🕯️',
-      title: 'आरती समय',
-      description: 'प्रातःकाल आरती: 5:00 AM\nसायंकालीन आरती: 7:00 PM',
-    },
-    {
-      icon: '🙏',
-      title: 'पूजा सेवाएँ',
-      description: 'सभी अवसरों और त्योहारों के लिए विशेष पूजाएं',
-    },
-    {
-      icon: '📿',
-      title: 'आध्यात्मिक मार्गदर्शन',
-      description: 'दिव्य शिक्षाओं और दर्शन को समझें',
-    },
-    {
-      icon: '🎉',
-      title: 'पर्व समारोह',
-      description: 'पवित्र त्योहारों का भक्तिपूर्ण उत्सव',
-    },
-  ];
-
-  const donationTiers = [
-    { amount: '₹ 101', label: 'अभिषेक पूजन' },
-    { amount: '₹ 251', label: 'विशेष पूजा' },
-    { amount: '₹ 501', label: 'हवन पूजन' },
-    { amount: '₹ 1100', label: 'श्राद्ध और तर्पण' },
-  ];
+export default function HomePage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [selectedPhoto, setSelectedPhoto] = useState<(typeof galleryPhotos)[0] | null>(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-amber-50 to-white">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-amber-100 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-amber-700 to-amber-900 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-                ॐ
-              </div>
-              <div className="hidden sm:block">
-                <h1 className="text-lg font-bold text-amber-950 tracking-wide">माँ श्यामा माई</h1>
-                <p className="text-xs text-amber-700 font-medium">दरभंगा, बिहार</p>
-              </div>
+    <div className="min-h-screen flex flex-col bg-[#FFFBF5] text-stone-900 scroll-smooth">
+      {/* Sticky Navbar */}
+      <header className="sticky top-0 z-50 bg-[#5C1414] text-white shadow-md border-b border-amber-500/30">
+        <div className="max-w-6xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between gap-4">
+          <Link href="/" className="flex items-center gap-3 min-w-0">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 text-[#4A0E0E] flex items-center justify-center font-black text-lg shadow-sm flex-shrink-0">
+              ॐ
             </div>
-
-            {/* Desktop Menu */}
-            <div className="hidden md:flex gap-8">
-              {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="text-sm font-semibold text-gray-700 hover:text-amber-700 transition-colors duration-300 relative group"
-                >
-                  {item.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-700 group-hover:w-full transition-all duration-300"></span>
-                </a>
-              ))}
+            <div className="truncate">
+              <p className="font-black text-base md:text-lg leading-tight truncate">
+                माँ श्यामा मंदिर न्यास समिति
+              </p>
+              <p className="text-[11px] md:text-xs text-amber-200/90 truncate">
+                माधवेश्वर परिसर, दरभंगा (बिहार)
+              </p>
             </div>
+          </Link>
 
-            {/* Header Buttons */}
-            <div className="hidden sm:flex gap-2 items-center">
-              <Link
-                href="/niyukti"
-                className="px-4 py-2 bg-gradient-to-r from-red-600 to-red-700 text-white text-sm font-bold rounded-lg hover:shadow-lg transition-all duration-300 flex items-center gap-2 transform hover:scale-105 relative"
-              >
-                <Briefcase size={15} />
-                नियुक्ति
-                <span className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-yellow-400 rounded-full animate-ping"></span>
-                <span className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-yellow-400 rounded-full"></span>
-              </Link>
-              <button className="px-5 py-2 bg-gradient-to-r from-amber-700 to-amber-800 text-white text-sm font-bold rounded-lg hover:shadow-lg transition-all duration-300 flex items-center gap-2 transform hover:scale-105">
-                <Heart size={16} className="fill-white" />
-                दान करें
-              </button>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden p-2 hover:bg-amber-50 rounded-lg transition-colors"
-              onClick={() => setMenuOpen(!menuOpen)}
+          {/* Desktop Navigation — Only Home, About, History, Notification, Gallery, Contact */}
+          <nav className="hidden lg:flex items-center gap-1 text-sm font-semibold">
+            <a href="#home" className="px-3 py-2 rounded-lg hover:bg-white/10 transition-colors">
+              होम
+            </a>
+            <a href="#about" className="px-3 py-2 rounded-lg hover:bg-white/10 transition-colors">
+              परिचय
+            </a>
+            <a href="#history" className="px-3 py-2 rounded-lg hover:bg-white/10 transition-colors">
+              इतिहास
+            </a>
+            <Link
+              href="/niyukti"
+              className="mx-1 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-[#4A0E0E] font-bold transition-colors shadow-sm"
             >
-              {menuOpen ? <X size={24} className="text-amber-700" /> : <Menu size={24} className="text-amber-700" />}
-            </button>
-          </div>
+              <Bell size={15} />
+              सूचनाएं
+            </Link>
+            <a href="#gallery" className="px-3 py-2 rounded-lg hover:bg-white/10 transition-colors">
+              गैलरी
+            </a>
+            <a href="#contact" className="px-3 py-2 rounded-lg hover:bg-white/10 transition-colors">
+              संपर्क
+            </a>
+          </nav>
 
-          {/* Mobile Menu */}
-          {menuOpen && (
-            <div className="md:hidden border-t border-amber-100 py-4 space-y-2 bg-gradient-to-b from-transparent to-amber-50">
-              {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-amber-100 rounded-lg transition-colors"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
+          {/* Mobile Menu Toggle */}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
+            aria-label="मेनू खोलें"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Dropdown Menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden bg-[#4A0E0E] border-t border-amber-500/20 px-4 py-3 space-y-1">
+            <a
+              href="#home"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2.5 rounded-lg text-sm font-semibold hover:bg-white/10"
+            >
+              होम (Home)
+            </a>
+            <a
+              href="#about"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2.5 rounded-lg text-sm font-semibold hover:bg-white/10"
+            >
+              परिचय (About)
+            </a>
+            <a
+              href="#history"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2.5 rounded-lg text-sm font-semibold hover:bg-white/10"
+            >
+              इतिहास (History)
+            </a>
+            <Link
+              href="/niyukti"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm font-bold bg-amber-500 text-[#4A0E0E]"
+            >
+              <Bell size={15} />
+              सूचनाएं (Notification)
+            </Link>
+            <a
+              href="#gallery"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2.5 rounded-lg text-sm font-semibold hover:bg-white/10"
+            >
+              गैलरी (Gallery)
+            </a>
+            <a
+              href="#contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2.5 rounded-lg text-sm font-semibold hover:bg-white/10"
+            >
+              संपर्क (Contact)
+            </a>
+          </div>
+        )}
+      </header>
+
+      {/* Hero Section with Temple Background */}
+      <section
+        id="home"
+        className="relative bg-[#4A0E0E] text-white overflow-hidden"
+      >
+        {/* Background Temple Image (public/temple-bg.jpg) */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/temple-bg.jpg')" }}
+        />
+
+        {/* Dark Maroon Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#4A0E0E]/90 via-[#5C1414]/75 to-[#4A0E0E]/55" />
+
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 py-14 md:py-24">
+          <div className="max-w-3xl">
+            <span className="inline-block px-3.5 py-1 rounded-full bg-amber-400/20 border border-amber-300/30 text-amber-200 text-xs md:text-sm font-semibold mb-4 backdrop-blur-sm">
+              बिहार राज्य धार्मिक न्यास पर्षद, पटना से निबंधित
+            </span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight mb-4 drop-shadow-sm">
+              माँ श्यामा माई मंदिर न्यास समिति, दरभंगा
+            </h1>
+            <p className="text-amber-100/95 text-sm sm:text-base md:text-lg leading-relaxed mb-8 drop-shadow-sm">
+              आस्था, भक्ति और विश्वास का पावन सिद्धपीठ — वर्ष 1933 में स्थापित, ललित नारायण मिथिला विश्वविद्यालय परिसर, कमेश्वरनगर, दरभंगा।
+            </p>
+
+            {/* Quick Info Pills (Darshan Timing & Location) */}
+            <div className="flex flex-col sm:flex-row gap-3 mb-8">
+              <div className="inline-flex items-center gap-2.5 bg-black/30 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 text-sm">
+                <Clock size={18} className="text-amber-300 flex-shrink-0" />
+                <span>
+                  <strong className="text-amber-200">दर्शन समय:</strong> प्रातः 5:00 AM – रात्रि 10:00 PM
+                </span>
+              </div>
+              <div className="inline-flex items-center gap-2.5 bg-black/30 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 text-sm">
+                <MapPin size={18} className="text-amber-300 flex-shrink-0" />
+                <span>कमेश्वरनगर, दरभंगा, बिहार 846004</span>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
               <Link
                 href="/niyukti"
-                className="flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-red-600 to-red-700 text-white text-sm font-bold rounded-lg"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-[#4A0E0E] font-bold text-sm md:text-base transition-colors shadow-lg"
               >
-                <Briefcase size={15} />
-                नियुक्ति
+                <Bell size={18} />
+                नवीनतम सूचनाएं एवं निविदा देखें
               </Link>
-              <button className="w-full px-4 py-2 bg-gradient-to-r from-amber-700 to-amber-800 text-white text-sm font-bold rounded-lg hover:shadow-lg flex items-center justify-center gap-2">
-                <Heart size={16} className="fill-white" />
-                दान करें
-              </button>
-            </div>
-          )}
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section id="home" className="relative h-[500px] md:h-[650px] overflow-hidden">
-        <Image
-          src="/WhatsApp_Image_2026-06-04_at_8.59.02_PM.jpeg"
-          alt="Maa Shyama Mandir"
-          fill
-          className="object-cover object-top object-down object-right object-left"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4 pt-20">
-          <div className="mb-6 animate-bounce">
-            <div className="text-6xl md:text-8xl drop-shadow-2xl"></div>
-          </div>
-          <h2 className="text-4xl md:text-7xl font-black mb-4 drop-shadow-2xl leading-tight tracking-wide">
-            जय श्यामा माई
-          </h2>
-          <p className="text-base md:text-2xl mb-8 drop-shadow-lg max-w-2xl font-medium">
-            आस्था, भक्ति और विश्वास का प्रतीक
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-4 bg-gradient-to-r from-amber-600 to-amber-700 text-white font-bold rounded-xl hover:from-amber-700 hover:to-amber-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
-              दर्शन बुक करें
-            </button>
-            <button className="px-8 py-4 bg-white text-amber-700 font-bold rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
-              दान करें
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Announcement Section */}
-      <section id="announcements" className="bg-gradient-to-r from-amber-700 to-amber-800 py-6 px-4 shadow-lg">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-start gap-4 text-white">
-            <Bell className="flex-shrink-0 mt-1 w-6 h-6 animate-pulse" />
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="text-xl font-bold flex items-center gap-2">
-                  घोषणाएं और समाचार
-                  <span className="inline-block w-2 h-2 bg-white rounded-full animate-pulse"></span>
-                </h3>
-                <button
-                  onClick={() => setCurrentAnnouncement((prev) => (prev + 1) % announcements.length)}
-                  className="text-sm hover:bg-amber-600 px-3 py-1 rounded-lg transition-colors flex items-center gap-1"
-                >
-                  अगला <ChevronRight size={16} />
-                </button>
-              </div>
-              <div className="space-y-2">
-                <div key={announcements[currentAnnouncement].id} className="animate-fade">
-                  <h4 className="font-bold text-lg">{announcements[currentAnnouncement].title}</h4>
-                  <p className="text-amber-100 text-sm">{announcements[currentAnnouncement].description}</p>
-                  <p className="text-xs text-amber-200 mt-1">{announcements[currentAnnouncement].date}</p>
-                </div>
-              </div>
-              <div className="flex gap-2 mt-3">
-                {announcements.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setCurrentAnnouncement(idx)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      idx === currentAnnouncement ? 'bg-white w-6' : 'bg-amber-300'
-                    }`}
-                  ></button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Quick Info Cards */}
-      <section className="bg-gradient-to-b from-transparent to-amber-50 py-12 px-4 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 -translate-y-10">
-            {[
-              { icon: Clock, label: 'खुलने का समय', value: '5:00 AM - 10:00 PM' },
-              { icon: MapPin, label: 'स्थान', value: 'दरभंगा, बिहार' },
-              { icon: Phone, label: 'फोन', value: '+91 91919 19191' },
-              { icon: Mail, label: 'ईमेल', value: 'shyamamai1933@gmail.com' },
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-amber-100 hover:border-amber-400 transform hover:-translate-y-2"
+              <a
+                href="#history"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-black/30 hover:bg-black/45 backdrop-blur-sm border border-white/30 text-white font-semibold text-sm md:text-base transition-colors"
               >
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-gradient-to-br from-amber-100 to-amber-200 rounded-xl">
-                    <item.icon className="w-6 h-6 text-amber-700" />
+                मंदिर का इतिहास
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Notifications Strip */}
+      <section className="max-w-6xl w-full mx-auto px-4 -mt-6 relative z-20">
+        <div className="bg-white rounded-2xl border border-amber-200 shadow-lg p-5 md:p-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-3 border-b border-amber-100">
+            <div className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />
+              <h2 className="text-lg md:text-xl font-black text-[#5C1414]">
+                नवीनतम सूचनाएं एवं निविदाएं
+              </h2>
+            </div>
+            <Link
+              href="/niyukti"
+              className="inline-flex items-center gap-1 text-sm font-bold text-[#7D1E1E] hover:text-amber-700"
+            >
+              सभी सूचनाएं देखें
+              <ChevronRight size={16} />
+            </Link>
+          </div>
+
+          <div className="space-y-3">
+            {latestNotices.map((notice) => (
+              <div
+                key={notice.id}
+                className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 rounded-xl bg-[#FFFBF5] border border-amber-200/80"
+              >
+                <div className="space-y-1.5">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-100 text-purple-800">
+                      {notice.category}
+                    </span>
+                    <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-green-100 text-green-700">
+                      {notice.status}
+                    </span>
+                    <span className="text-xs font-semibold text-stone-500">
+                      सूचना सं० {notice.id}
+                    </span>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900">{item.label}</h3>
-                    <p className="text-sm text-gray-600 font-medium">{item.value}</p>
-                  </div>
+                  <h3 className="font-bold text-stone-900 text-sm md:text-base">
+                    {notice.title}
+                  </h3>
+                  <p className="text-xs text-red-700 font-semibold inline-flex items-center gap-1.5">
+                    <Calendar size={13} />
+                    अंतिम तिथि: {notice.lastDate}
+                  </p>
                 </div>
+
+                <a
+                  href={notice.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#6B1818] hover:bg-[#521111] text-white text-xs md:text-sm font-bold transition-colors flex-shrink-0"
+                >
+                  <FileText size={15} />
+                  PDF देखें
+                  <ExternalLink size={13} />
+                </a>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block px-4 py-2 bg-amber-100 rounded-full mb-4">
-                <span className="text-amber-900 font-bold text-sm">मंदिर परिचय</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
-                माँ श्यामा माई मंदिर
-              </h2>
-              <p className="text-gray-700 mb-4 leading-relaxed text-lg">
-                श्यामा माई मंदिर बिहार के दरभंगा जिले में ललित नारायण मिथिला विश्वविद्यालय परिसर के भीतर स्थित माता काली को समर्पित एक अत्यंत प्रसिद्ध और पवित्र सिद्धपीठ है। इस ऐतिहासिक मंदिर का निर्माण वर्ष 1933 में दरभंगा राज के महाराजा कामेश्वर सिंह ने अपने पिता महाराजा रामेश्वर सिंह की चिता भूमि (श्मशान) पर करवाया था, जो स्वयं एक महान तंत्र साधक थे। मंदिर के गर्भगृह में भगवान शिव की छाती पर विराजमान माँ श्यामा (काली) की एक विशाल और अलौकिक प्रतिमा स्थापित है, जिनके दाहिनी ओर महाकाल और बाईं ओर भगवान गणेश तथा बटुक भैरव की मूर्तियाँ हैं। इस मंदिर की सबसे अनोखी विशेषता यह है कि आमतौर पर श्मशान भूमि पर बने मंदिरों में मांगलिक कार्य वर्जित होते हैं, लेकिन यहाँ माता को कुलदेवी मानकर शादी-विवाह, मुंडन और उपनयन जैसे सभी शुभ संस्कार अत्यंत धूमधाम से संपन्न किए जाते हैं। यहाँ वैदिक और तांत्रिक दोनों विधियों से पूजा की जाती है, और विशेषकर नवरात्रि के समय यहाँ भक्तों की भारी भीड़ उमड़ती है।
+      {/* About Section (परिचय) */}
+      <section id="about" className="max-w-6xl w-full mx-auto px-4 pt-14 md:pt-20 pb-8 scroll-mt-20">
+        <div className="mb-8">
+          <span className="text-xs font-bold uppercase tracking-wider text-amber-700">
+            हमारे बारे में
+          </span>
+          <h2 className="text-2xl md:text-3xl font-black text-[#5C1414] mt-1">
+            मंदिर एवं न्यास समिति का परिचय
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6">
+          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5">
+            <p className="text-xs font-bold text-amber-800">स्थापना वर्ष</p>
+            <p className="text-2xl font-black text-[#5C1414] mt-1">1933</p>
+            <p className="text-xs text-stone-600 mt-1">
+              महाराजा कामेश्वर सिंह (दरभंगा राज) द्वारा निर्मित
+            </p>
+          </div>
+          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5">
+            <p className="text-xs font-bold text-amber-800">पूजा पद्धति</p>
+            <p className="text-lg font-black text-[#5C1414] mt-1">वैदिक एवं तांत्रिक विधि</p>
+            <p className="text-xs text-stone-600 mt-1">
+              नवरात्रि एवं वार्षिक नवाह महायज्ञ के प्रमुख आयोजन
+            </p>
+          </div>
+          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5">
+            <p className="text-xs font-bold text-amber-800">प्रबंधन</p>
+            <p className="text-lg font-black text-[#5C1414] mt-1">न्यास समिति, दरभंगा</p>
+            <p className="text-xs text-stone-600 mt-1">
+              बिहार राज्य धार्मिक न्यास पर्षद, पटना से निबंधित
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-2xl border border-amber-100 p-6 md:p-8 shadow-sm text-stone-700 text-sm md:text-base leading-relaxed">
+          <p>
+            <strong>माँ श्यामा मंदिर न्यास समिति, दरभंगा</strong> (बिहार राज्य धार्मिक न्यास पर्षद, पटना से निबंधित) मंदिर परिसर की व्यवस्था, धार्मिक आयोजनों, स्वच्छता, श्रद्धालुओं की सुविधा तथा वार्षिक नवाह महायज्ञ जैसे प्रमुख पर्वों का संचालन पारदर्शी रूप से करती है। यह मंदिर केवल एक धार्मिक स्थल ही नहीं, बल्कि मिथिलांचल की आस्था और सामाजिक एकता का प्रमुख केंद्र है।
+          </p>
+        </div>
+      </section>
+
+      {/* History Section (इतिहास) */}
+      <section id="history" className="max-w-6xl w-full mx-auto px-4 py-10 md:py-16 scroll-mt-20">
+        <div className="mb-8">
+          <span className="text-xs font-bold uppercase tracking-wider text-amber-700">
+            ऐतिहासिक धरोहर
+          </span>
+          <h2 className="text-2xl md:text-3xl font-black text-[#5C1414] mt-1">
+            मंदिर का इतिहास
+          </h2>
+        </div>
+
+        <div className="bg-white rounded-2xl border border-amber-100 p-6 md:p-8 shadow-sm space-y-4 text-stone-700 text-sm md:text-base leading-relaxed">
+          <p>
+            <strong>माँ श्यामा माई मंदिर</strong> बिहार के दरभंगा जिले में ललित नारायण मिथिला विश्वविद्यालय परिसर के भीतर स्थित माता काली को समर्पित एक अत्यंत प्रसिद्ध और पवित्र सिद्धपीठ है। इस ऐतिहासिक मंदिर का निर्माण वर्ष <strong>1933</strong> में दरभंगा राज के महाराजा कामेश्वर सिंह ने अपने पिता महाराजा रामेश्वर सिंह की चिता भूमि (श्मशान) पर करवाया था, जो स्वयं एक महान तंत्र साधक थे।
+          </p>
+          <p>
+            मंदिर के गर्भगृह में भगवान शिव की छाती पर विराजमान माँ श्यामा (काली) की एक विशाल और अलौकिक प्रतिमा स्थापित है, जिनके दाहिनी ओर महाकाल और बाईं ओर भगवान गणेश तथा बटुक भैरव की मूर्तियाँ हैं।
+          </p>
+          <p>
+            इस मंदिर की सबसे अनोखी विशेषता यह है कि आमतौर पर श्मशान भूमि पर बने मंदिरों में मांगलिक कार्य वर्जित होते हैं, लेकिन यहाँ माता को कुलदेवी मानकर शादी-विवाह, मुंडन और उपनयन जैसे सभी शुभ संस्कार अत्यंत धूमधाम से संपन्न किए जाते हैं। यहाँ वैदिक और तांत्रिक दोनों विधियों से पूजा की जाती है।
+          </p>
+        </div>
+      </section>
+
+      {/* Photo Gallery Section (गैलरी) */}
+      <section id="gallery" className="bg-amber-50/60 border-y border-amber-100 py-14 md:py-20 scroll-mt-20">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="mb-8">
+            <span className="text-xs font-bold uppercase tracking-wider text-amber-700">
+              मंदिर की झलकियाँ
+            </span>
+            <h2 className="text-2xl md:text-3xl font-black text-[#5C1414] mt-1">
+              चित्र दीर्घा (Gallery)
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {galleryPhotos.map((photo) => (
+              <button
+                key={photo.id}
+                type="button"
+                onClick={() => setSelectedPhoto(photo)}
+                className="group text-left bg-white rounded-2xl border border-amber-200/80 overflow-hidden shadow-sm hover:shadow-md transition-all"
+              >
+                <div className="aspect-[4/3] bg-gradient-to-br from-amber-100 to-orange-100 relative overflow-hidden flex items-center justify-center">
+                  <img
+                    src={photo.src}
+                    alt={photo.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                  <span className="absolute text-amber-800/40 font-black text-4xl select-none pointer-events-none">
+                    ॐ
+                  </span>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-bold text-stone-900 text-sm md:text-base">
+                    {photo.title}
+                  </h3>
+                  <p className="text-xs text-stone-500 mt-0.5">{photo.caption}</p>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Lightbox Modal for Gallery */}
+      {selectedPhoto && (
+        <div
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+          onClick={() => setSelectedPhoto(null)}
+        >
+          <div
+            className="bg-white rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between px-4 py-3 border-b border-stone-200">
+              <p className="font-bold text-stone-900 text-sm md:text-base">
+                {selectedPhoto.title}
               </p>
-              <p className="text-gray-700 mb-8 leading-relaxed text-lg">
-              यह मंदिर न केवल एक धार्मिक स्थान है, बल्कि एक सामाजिक केंद्र है जहाँ समाज के सभी वर्ग के लोग आते हैं और अपनी श्रद्धा प्रकट करते हैं।
-              </p>
-              <button className="px-8 py-4 bg-gradient-to-r from-amber-700 to-amber-800 text-white font-bold rounded-xl hover:from-amber-800 hover:to-amber-900 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                अधिक जानें
+              <button
+                type="button"
+                onClick={() => setSelectedPhoto(null)}
+                className="p-1.5 rounded-lg hover:bg-stone-100 text-stone-600"
+              >
+                <X size={20} />
               </button>
             </div>
-            <div className="relative h-96 md:h-[450px] rounded-3xl overflow-hidden shadow-2xl border-8 border-amber-100">
-              <Image
-                src="/WhatsApp_Image_2026-06-04_at_8.59.04_PM_-_Copy.jpeg"
-                alt="मंदिर का अंदरूनी भाग"
-                fill
-                className="object-cover hover:scale-110 transition-transform duration-500"
+            <div className="bg-stone-100 max-h-[70vh] flex items-center justify-center overflow-hidden">
+              <img
+                src={selectedPhoto.src}
+                alt={selectedPhoto.title}
+                className="w-full h-auto max-h-[70vh] object-contain"
               />
             </div>
+            <div className="px-4 py-3 text-xs text-stone-600">{selectedPhoto.caption}</div>
           </div>
         </div>
-      </section>
+      )}
 
-      {/* Services Section */}
-      <section id="darshan" className="py-20 px-4 bg-gradient-to-b from-amber-50 to-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 bg-amber-100 rounded-full mb-4">
-              <span className="text-amber-900 font-bold text-sm">सेवाएँ</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
-              मंदिर की पवित्र सेवाएँ
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {serviceItems.map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-4 border-2 border-transparent hover:border-amber-400"
-              >
-                <div className="text-5xl mb-4 drop-shadow-lg">{item.icon}</div>
-                <h3 className="font-bold text-lg text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-sm text-gray-600 whitespace-pre-line leading-relaxed font-medium">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery Section */}
-      <section id="gallery" className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 bg-amber-100 rounded-full mb-4">
-              <span className="text-amber-900 font-bold text-sm">मंदिर दीर्घा</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
-              मंदिर की छवियाँ
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {galleryImages.map((img, idx) => (
-              <div
-                key={idx}
-                className="relative h-96 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group border-4 border-amber-100"
-              >
-                <Image
-                  src={img}
-                  alt={`गैलरी ${idx + 1}`}
-                  fill
-                  className="object-cover group-hover:scale-125 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300 flex items-end justify-start p-6">
-                  <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="font-bold text-lg">मंदिर दृश्य {idx + 1}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Donation Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-amber-50 to-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 bg-amber-100 rounded-full mb-4">
-              <span className="text-amber-900 font-bold text-sm">दान और पूजा</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
-              माँ की सेवा में अवदान
-            </h2>
-            <p className="text-gray-600 text-lg">
-              माँ के मंदिर की सेवा में भाग लें और आशीर्वाद प्राप्त करें
+      {/* Contact & Footer (संपर्क) */}
+      <footer id="contact" className="bg-[#4A0E0E] text-amber-100 mt-auto scroll-mt-20">
+        <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 className="font-black text-white text-lg mb-3">
+              माँ श्यामा मंदिर न्यास समिति
+            </h3>
+            <p className="text-sm text-amber-200/80 leading-relaxed">
+              माधवेश्वर परिसर, कमेश्वरनगर, दरभंगा, बिहार — 846004
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {donationTiers.map((tier, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-3 border-amber-100 hover:border-amber-700 transform hover:-translate-y-4 group"
-              >
-                <div className="text-4xl font-black text-amber-700 mb-3 group-hover:scale-110 transition-transform duration-300">
-                  {tier.amount}
-                </div>
-                <p className="text-gray-900 font-bold mb-6 text-lg">{tier.label}</p>
-                <button className="w-full px-4 py-3 bg-gradient-to-r from-amber-700 to-amber-800 text-white font-bold rounded-xl hover:from-amber-800 hover:to-amber-900 transition-all duration-300 transform hover:scale-105">
-                  दान करें
-                </button>
-              </div>
-            ))}
+          <div className="space-y-2.5 text-sm">
+            <h4 className="font-bold text-white mb-2">संपर्क विवरण</h4>
+            <p className="flex items-center gap-2 text-amber-200/90">
+              <Phone size={15} className="text-amber-400 flex-shrink-0" />
+              +91 91919 19191
+            </p>
+            <p className="flex items-center gap-2 text-amber-200/90">
+              <Mail size={15} className="text-amber-400 flex-shrink-0" />
+              accounts@maashyamamandir.in
+            </p>
+            <p className="flex items-center gap-2 text-amber-200/90">
+              <Mail size={15} className="text-amber-400 flex-shrink-0" />
+              shyamamai1933@gmail.com
+            </p>
           </div>
 
-          <div className="text-center">
-            <button className="px-8 py-4 bg-gradient-to-r from-amber-700 to-amber-800 text-white font-bold rounded-xl hover:from-amber-800 hover:to-amber-900 transition-all duration-300 inline-flex items-center gap-3 shadow-lg transform hover:scale-105">
-              <ShoppingCart size={22} />
-              कस्टम राशि दान करें
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 bg-amber-100 rounded-full mb-4">
-              <span className="text-amber-900 font-bold text-sm">संपर्क जानकारी</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
-              हमसे जुड़ें
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-gradient-to-br from-amber-950 to-amber-900 text-white p-10 rounded-3xl shadow-2xl">
-              <h3 className="text-3xl font-black mb-10">संपर्क विवरण</h3>
-
-              <div className="space-y-8">
-                <div className="flex gap-4">
-                  <div className="p-3 bg-amber-700 rounded-xl flex-shrink-0">
-                    <MapPin size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg mb-1">पता</h4>
-                    <p className="text-amber-100 leading-relaxed">
-                      माँ श्यामा माई मंदिर, कमेश्वरनगर <br />
-                      दरभंगा, बिहार 846004
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="p-3 bg-amber-700 rounded-xl flex-shrink-0">
-                    <Phone size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg mb-1">फोन</h4>
-                    <p className="text-amber-100">+91 91919 19191</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="p-3 bg-amber-700 rounded-xl flex-shrink-0">
-                    <Mail size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg mb-1">ईमेल</h4>
-                    <p className="text-amber-100">accounts@maashyamamandir.in</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-12 pt-10 border-t border-amber-700">
-                <p className="text-amber-200 text-sm font-bold mb-6">हमें सोशल मीडिया पर फॉलो करें</p>
-                <div className="flex gap-4">
-                  <a href="#" className="w-12 h-12 bg-amber-700 hover:bg-amber-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 font-bold text-lg">
-                    f
-                  </a>
-                  <a href="#" className="w-12 h-12 bg-amber-700 hover:bg-amber-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 text-lg">
-                    📘
-                  </a>
-                  <a href="#" className="w-12 h-12 bg-amber-700 hover:bg-amber-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 text-lg">
-                    📱
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-amber-50 to-white p-10 rounded-3xl shadow-xl border-3 border-amber-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-8">संदेश भेजें</h3>
-              <form className="space-y-5">
-                <div>
-                  <label className="block text-sm font-bold text-gray-900 mb-2">आपका नाम</label>
-                  <input
-                    type="text"
-                    placeholder="अपना नाम दर्ज करें"
-                    className="w-full px-4 py-3 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-700 transition-colors bg-white"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-bold text-gray-900 mb-2">ईमेल पता</label>
-                  <input
-                    type="email"
-                    placeholder="अपना ईमेल दर्ज करें"
-                    className="w-full px-4 py-3 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-700 transition-colors bg-white"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-bold text-gray-900 mb-2">संदेश</label>
-                  <textarea
-                    placeholder="अपना संदेश लिखें"
-                    rows={4}
-                    className="w-full px-4 py-3 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-700 transition-colors bg-white resize-none"
-                  ></textarea>
-                </div>
-                <button className="w-full px-4 py-3 bg-gradient-to-r from-amber-700 to-amber-800 text-white font-bold rounded-xl hover:from-amber-800 hover:to-amber-900 transition-all duration-300 transform hover:scale-105">
-                  संदेश भेजें
-                </button>
-              </form>
+          <div className="space-y-2 text-sm">
+            <h4 className="font-bold text-white mb-2">त्वरित लिंक</h4>
+            <div className="flex flex-col gap-1.5 text-amber-200/90">
+              <a href="#home" className="hover:text-white">होम</a>
+              <a href="#about" className="hover:text-white">परिचय</a>
+              <a href="#history" className="hover:text-white">इतिहास</a>
+              <Link href="/niyukti" className="hover:text-white font-semibold text-amber-300">
+                सूचनाएं
+              </Link>
+              <a href="#gallery" className="hover:text-white">गैलरी</a>
+              <a href="#contact" className="hover:text-white">संपर्क</a>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Footer */}
-      <footer className="bg-gradient-to-r from-amber-950 via-amber-900 to-amber-950 text-amber-50 py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
-            <div>
-              <h3 className="font-black text-lg mb-4 flex items-center gap-2">
-                <span className="text-2xl">ॐ</span> त्वरित लिंक
-              </h3>
-              <ul className="space-y-2 text-sm font-medium">
-                <li><a href="#home" className="hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block">→ होम</a></li>
-                <li><a href="#about" className="hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block">→ परिचय</a></li>
-                <li><a href="#gallery" className="hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block">→ गैलरी</a></li>
-                <li><a href="#announcements" className="hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block">→ समाचार</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-black text-lg mb-4">हमारी सेवाएँ</h3>
-              <ul className="space-y-2 text-sm font-medium">
-                <li><a href="#darshan" className="hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block">→ दर्शन</a></li>
-                <li><a href="#" className="hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block">→ पूजा बुकिंग</a></li>
-                <li><a href="#" className="hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block">→ दान</a></li>
-                <li><a href="#contact" className="hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block">→ संपर्क</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-black text-lg mb-4">मंदिर की जानकारी</h3>
-              <p className="text-sm font-medium mb-2">श्यामा माई मंदिर</p>
-              <p className="text-sm font-medium mb-4">दरभंगा, बिहार 846004</p>
-              <p className="text-xs text-amber-300">सभी भक्तों के लिए खुला</p>
-            </div>
-          </div>
-
-          <div className="border-t border-amber-700 pt-8">
-            <p className="text-center text-sm font-medium">
-              © 2026 श्यामा माई मंदिर, दरभंगा। सर्वाधिकार सुरक्षित।
-            </p>
-            <p className="text-center text-xs text-amber-200 mt-2">
-              भक्ति • समर्पण • शांति
-            </p>
-          </div>
+        <div className="border-t border-white/10 py-4 px-4 text-center text-xs text-amber-300/80">
+          © 2026 माँ श्यामा मंदिर न्यास समिति, दरभंगा। सर्वाधिकार सुरक्षित।
         </div>
       </footer>
     </div>

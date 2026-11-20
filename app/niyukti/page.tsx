@@ -19,7 +19,7 @@ const notifications: NotificationItem[] = [
     id: '04/2026',
     title: 'नवाह 2026 हेतु विभिन्न सामग्री एवं सेवाओं की अल्पकालीन निविदा (सूचना सं०-04/2026)',
     category: 'निविदा',
-    publishedDate: '20 नवंबर 2026',
+    publishedDate: '17 नवंबर 2026',
     lastDate: '24 नवंबर 2026 (अपराह्न 2:00 बजे)',
     status: 'सक्रिय',
     link: '/tender-04-2026.pdf', // अगर फाइल का नाम नहीं बदला है, तो '/sarvajanik_suchna_04_2026.pdf' लिखें

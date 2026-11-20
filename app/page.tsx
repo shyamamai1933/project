@@ -59,18 +59,13 @@ export default function HomePage() {
       {/* Sticky Navbar */}
       <header className="sticky top-0 z-50 bg-[#5C1414] text-white shadow-md border-b border-amber-500/30">
         <div className="max-w-6xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-3 min-w-0">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 text-[#4A0E0E] flex items-center justify-center font-black text-lg shadow-sm flex-shrink-0">
-              ॐ
-            </div>
-            <div className="truncate">
-              <p className="font-black text-base md:text-lg leading-tight truncate">
-                माँ श्यामा मंदिर न्यास समिति
-              </p>
-              <p className="text-[11px] md:text-xs text-amber-200/90 truncate">
-                माधवेश्वर परिसर, दरभंगा (बिहार)
-              </p>
-            </div>
+          <Link href="/" className="min-w-0">
+            <p className="font-black text-base md:text-lg leading-tight truncate">
+              माँ श्यामा मंदिर न्यास समिति
+            </p>
+            <p className="text-[11px] md:text-xs text-amber-200/90 truncate">
+              माधवेश्वर परिसर, दरभंगा (बिहार)
+            </p>
           </Link>
 
           {/* Desktop Navigation — Only Home, About, History, Notification, Gallery, Contact */}
@@ -377,9 +372,6 @@ export default function HomePage() {
                       e.currentTarget.style.display = 'none';
                     }}
                   />
-                  <span className="absolute text-amber-800/40 font-black text-4xl select-none pointer-events-none">
-                    ॐ
-                  </span>
                 </div>
                 <div className="p-4">
                   <h3 className="font-bold text-stone-900 text-sm md:text-base">

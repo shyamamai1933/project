@@ -163,7 +163,7 @@ export default function HomePage() {
         {/* Background Temple Image (public/temple-bg.jpg) */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/temple-bg.jpg')" }}
+          style={{ backgroundImage: "url('/temple-bg.jpeg')" }}
         />
 
         {/* Dark Maroon Gradient Overlay */}
@@ -173,10 +173,9 @@ export default function HomePage() {
         <div className="relative z-10 max-w-6xl mx-auto px-4 py-14 md:py-24">
           <div className="max-w-3xl">
             <span className="inline-block px-3.5 py-1 rounded-full bg-amber-400/20 border border-amber-300/30 text-amber-200 text-xs md:text-sm font-semibold mb-4 backdrop-blur-sm">
-              बिहार राज्य धार्मिक न्यास पर्षद, पटना से निबंधित
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight mb-4 drop-shadow-sm">
-              माँ श्यामा माई मंदिर न्यास समिति, दरभंगा
+              जय श्यामा माई 
             </h1>
             <p className="text-amber-100/95 text-sm sm:text-base md:text-lg leading-relaxed mb-8 drop-shadow-sm">
               आस्था, भक्ति और विश्वास का पावन सिद्धपीठ — वर्ष 1933 में स्थापित, ललित नारायण मिथिला विश्वविद्यालय परिसर, कमेश्वरनगर, दरभंगा।

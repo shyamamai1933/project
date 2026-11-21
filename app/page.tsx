@@ -313,7 +313,7 @@ export default function HomePage() {
 
         <div className="bg-white rounded-2xl border border-amber-100 p-6 md:p-8 shadow-sm text-stone-700 text-sm md:text-base leading-relaxed">
           <p>
-            <strong>माँ श्यामा मंदिर न्यास समिति, दरभंगा</strong> (बिहार राज्य धार्मिक न्यास पर्षद, पटना से निबंधित) मंदिर परिसर की व्यवस्था, धार्मिक आयोजनों, स्वच्छता, श्रद्धालुओं की सुविधा तथा वार्षिक नवाह महायज्ञ जैसे प्रमुख पर्वों का संचालन पारदर्शी रूप से करती है। यह मंदिर केवल एक धार्मिक स्थल ही नहीं, बल्कि मिथिलांचल की आस्था और सामाजिक एकता का प्रमुख केंद्र है।
+            <strong>माँ श्यामा मंदिर न्यास समिति, दरभंगा</strong> (बिहार राज्य धार्मिक न्यास पर्षद , पटना से निबंधित) मंदिर परिसर की व्यवस्था, धार्मिक आयोजनों, स्वच्छता, श्रद्धालुओं की सुविधा तथा वार्षिक नवाह महायज्ञ जैसे प्रमुख पर्वों का संचालन पारदर्शी रूप से करती है। यह मंदिर केवल एक धार्मिक स्थल ही नहीं, बल्कि मिथिलांचल की आस्था और सामाजिक एकता का प्रमुख केंद्र है।
           </p>
         </div>
       </section>
@@ -434,11 +434,10 @@ export default function HomePage() {
             <h4 className="font-bold text-white mb-2">संपर्क विवरण</h4>
             <p className="flex items-center gap-2 text-amber-200/90">
               <Phone size={15} className="text-amber-400 flex-shrink-0" />
-              +91 91919 19191
+              +91 9234321940 
             </p>
             <p className="flex items-center gap-2 text-amber-200/90">
               <Mail size={15} className="text-amber-400 flex-shrink-0" />
-              accounts@maashyamamandir.in
             </p>
             <p className="flex items-center gap-2 text-amber-200/90">
               <Mail size={15} className="text-amber-400 flex-shrink-0" />

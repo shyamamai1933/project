@@ -34,19 +34,19 @@ const galleryPhotos = [
     id: 1,
     title: 'माँ श्यामा माई मंदिर मुख्य परिसर',
     caption: 'माधवेश्वर परिसर, दरभंगा',
-    src: '/gallery-1.jpg',
+    src: '/gallery-1.jpeg',
   },
   {
     id: 2,
     title: 'गर्भगृह एवं दिव्य श्रृंगार',
     caption: 'माँ श्यामा (काली) की अलौकिक प्रतिमा',
-    src: '/gallery-2.jpg',
+    src: '/gallery-2.jpeg',
   },
   {
     id: 3,
     title: 'नवाह महायज्ञ एवं पर्व उत्सव',
     caption: 'वार्षिक धार्मिक आयोजन',
-    src: '/gallery-3.jpg',
+    src: '/gallery-3.jpeg',
   },
 ];
 
